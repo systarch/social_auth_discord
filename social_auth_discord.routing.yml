@@ -1,8 +1,9 @@
 social_auth_discord.redirect_to_discord:
   path: 'user/login/discord'
   defaults:
-    _controller: '\Drupal\social_auth_discord\Controller\DiscordAuthController::redirectToDiscord'
+    _controller: '\Drupal\social_auth_discord\Controller\DiscordAuthController::redirectToProvider'
   requirements:
+    # Anonymous users can log in, but authenticated users can also associate a new provider.
     _access: 'TRUE'
   options:
     no_cache: TRUE
@@ -12,6 +13,7 @@ social_auth_discord.callback:
   defaults:
     _controller: '\Drupal\social_auth_discord\Controller\DiscordAuthController::callback'
   requirements:
+    # Anonymous users can log in, but authenticated users can also associate a new provider.
     _access: 'TRUE'
   options:
     no_cache: TRUE
