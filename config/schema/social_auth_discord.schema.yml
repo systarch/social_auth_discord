@@ -10,7 +10,7 @@ social_auth_discord.settings:
       label: 'Client Secret'
     scopes:
       type: string
-      label: 'Scopes to make API calls'
-    api_calls:
+      label: 'Scopes to be requested'
+    endpoints:
       type: string
-      label: 'API calls which will retrieve data'
+      label: 'API endpoints to be requested'
