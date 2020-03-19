@@ -39,7 +39,7 @@ class DiscordAuthSettingsForm extends SocialAuthSettingsForm {
       '#title' => $this->t('Discord Client settings'),
       '#open' => TRUE,
       '#description' => $this->t('You need to first create a Discord App at <a href="@discord-dev">@discord-dev</a>',
-        ['@discord-dev' => 'https://discordapp.com/developers/applications/me/create']),
+        ['@discord-dev' => 'https://discordapp.com/developers/applications']),
     ];
 
     $form['discord_settings']['client_id'] = [
