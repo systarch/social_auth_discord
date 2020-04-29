@@ -50,7 +50,7 @@ class DiscordAuthManager extends OAuth2Manager {
    * {@inheritdoc}
    */
   public function getUserInfo() {
-    if (!$this->user) {
+    if (!$this->user && !is_null($this->getAccessToken())) {
       $this->user = $this->client->getResourceOwner($this->getAccessToken());
     }
 
