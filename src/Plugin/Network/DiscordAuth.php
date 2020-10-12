@@ -55,9 +55,9 @@ class DiscordAuth extends NetworkBase implements DiscordAuthInterface {
       ];
 
       // Proxy configuration data for outward proxy.
-      $proxyUrl = $this->siteSettings->get('http_client_config')['proxy']['http'];
-      if ($proxyUrl) {
-        $league_settings['proxy'] = $proxyUrl;
+      $httpClientConfig = $this->siteSettings->get('http_client_config');
+      if (isset($httpClientConfig['proxy']['http'])) {
+        $league_settings['proxy'] = $httpClientConfig['proxy']['http'];
       }
 
       return new Discord($league_settings);
